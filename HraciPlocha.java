@@ -15,6 +15,9 @@ public class HraciPlocha {
         inicializujPlochu();
     }
 
+    /**
+     * inicializace hrací plochy
+     */
     private void inicializujPlochu() {
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
@@ -23,6 +26,9 @@ public class HraciPlocha {
         }
     }
 
+    /**
+     * vykreslení hrací plochy
+     */
     public void vykresliPlochu() {
         System.out.println("-------------");
         for (int i = 0; i < 3; i++) {
@@ -35,6 +41,10 @@ public class HraciPlocha {
         }
     }
 
+    /**
+     * kontrola obsazenosti pole
+     * @return
+     */
     public boolean jePlno() {
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
@@ -46,19 +56,26 @@ public class HraciPlocha {
         return true;
     }
     public boolean jeVitez (char symbol) {
-        // kontrola řádků
+        /**
+         * kontrola řádků
+         */
         for (int i = 0; i < 3; i++) {
             if (hraciPlocha[i][0] == symbol && hraciPlocha[i][1] == symbol && hraciPlocha[i][2] == symbol) {
                 return true;
             }
         }
-        // kontrola sloupců
+        /**
+         * kontrola sloupců
+          */
+
         for (int i = 0; i < 3; i++) {
             if (hraciPlocha[0][i] == symbol && hraciPlocha[1][i] == symbol && hraciPlocha[2][i] == symbol) {
                 return true;
             }
         }
-        // kontrola diagonál
+        /**
+         * kontrola diagonál
+         */
         if (hraciPlocha[0][0] == symbol && hraciPlocha[1][1] == symbol && hraciPlocha[2][2] == symbol) {
             return true;
         }
@@ -67,6 +84,14 @@ public class HraciPlocha {
         }
         return false;
     }
+
+    /**
+     * provedení tahu
+     * @param row
+     * @param col
+     * @param symbol
+     * @return
+     */
     public boolean provedTah (int row, int col, char symbol) {
         if (row >= 0 && row < 3 && col >= 0 && col < 3 && hraciPlocha[row][col] == '-') {
             hraciPlocha[row][col] = symbol;

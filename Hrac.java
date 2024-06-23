@@ -6,6 +6,10 @@ public class Hrac {
     private char symbol;
     Scanner scanner = new Scanner(System.in);
 
+    /**
+     * hráč
+     * @param symbol
+     */
     public Hrac(char symbol) {
         this.symbol = symbol;
     }
@@ -14,6 +18,10 @@ public class Hrac {
         return symbol;
     }
 
+    /**
+     * provedení tahu
+     * @param hraciPlocha
+     */
     public void provedTah(HraciPlocha hraciPlocha) {
         int row, col;
         while (true) {
